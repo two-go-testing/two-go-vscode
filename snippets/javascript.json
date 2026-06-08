@@ -1,0 +1,52 @@
+{
+  "two-go GET request": {
+    "prefix": "go-get",
+    "body": [
+      "await go(\"${1:https://api.example.com}\")",
+      "  .get(\"${2:/users}\")",
+      "  .expectStatus(${3:200})",
+      "  .expectJson(\"${4:data[0].id}\", ${5:1});"
+    ],
+    "description": "Build a two-go GET request chain with status and JSON checks."
+  },
+  "two-go POST request": {
+    "prefix": "go-post",
+    "body": [
+      "await go(\"${1:https://api.example.com}\")",
+      "  .post(\"${2:/users}\")",
+      "  .json({ ${3:name}: \"${4:Ada}\" })",
+      "  .expectStatus(${5:201})",
+      "  .expectJson(\"${6:data.name}\", \"${7:Ada}\");"
+    ],
+    "description": "Build a two-go POST request with a JSON body and checks."
+  },
+  "two-go expectStatus": {
+    "prefix": "expect-status",
+    "body": [
+      ".expectStatus(${1:200})"
+    ],
+    "description": "Assert the response status code."
+  },
+  "two-go expectJson": {
+    "prefix": "expect-json",
+    "body": [
+      ".expectJson(\"${1:data[0].id}\", ${2:1})"
+    ],
+    "description": "Assert a value at a JSON path in the response body."
+  },
+  "two-go test": {
+    "prefix": "two-go-test",
+    "body": [
+      "const { test } = require(\"node:test\");",
+      "const { go } = require(\"two-go\");",
+      "",
+      "test(\"${1:GET users returns the first user}\", async () => {",
+      "  await go(\"${2:https://api.example.com}\")",
+      "    .get(\"${3:/users}\")",
+      "    .expectStatus(${4:200})",
+      "    .expectJson(\"${5:data[0].id}\", ${6:1});",
+      "});"
+    ],
+    "description": "A full node:test test wrapping a two-go request chain."
+  }
+}

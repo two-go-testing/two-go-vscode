@@ -1,0 +1,38 @@
+{
+  "name": "two-go-vscode",
+  "displayName": "two-go",
+  "description": "VS Code extension with snippets and helpers for writing two-go API tests",
+  "version": "0.1.0",
+  "publisher": "two-go-testing",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/javascript.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "two-go.newTest",
+        "title": "two-go: Insert API Test Skeleton"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/two-go-testing/two-go-vscode.git"
+  }
+}
