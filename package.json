@@ -2,7 +2,7 @@
   "name": "two-go-vscode",
   "displayName": "two-go",
   "description": "VS Code extension with snippets and helpers for writing two-go API tests",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "two-go-testing",
   "license": "MIT",
   "engines": {
