@@ -16,8 +16,9 @@ function activate(context) {
 
     const skeleton = new vscode.SnippetString(
       [
-        'const { test } = require("node:test");',
-        'const { go } = require("two-go");',
+        // two-go is ESM-only, so the skeleton uses import, not require.
+        'import { test } from "node:test";',
+        'import { go } from "two-go";',
         "",
         'test("${1:GET users returns the first user}", async () => {',
         '  await go("${2:https://api.example.com}")',

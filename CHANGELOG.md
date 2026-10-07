@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- The `two-go-test` snippet and the `two-go: Insert API Test Skeleton` command now
+  use `import` instead of `require`. two-go is ESM-only, so the old skeleton
+  failed with `ERR_REQUIRE_ESM` on Node 18 and 20.
+
 ## 0.1.0
 
 Initial release.

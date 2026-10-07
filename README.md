@@ -12,7 +12,7 @@ The snippets are available in both JavaScript and TypeScript files.
 - `go-post` - Build a POST request with a JSON body and checks.
 - `expect-status` - Insert an `.expectStatus(...)` assertion.
 - `expect-json` - Insert an `.expectJson(...)` assertion for a JSON path.
-- `two-go-test` - Insert a full `node:test` test wrapping a two-go request chain.
+- `two-go-test` - Insert a full `node:test` test wrapping a two-go request chain. It uses ESM `import`, so put it in a `.mjs` file or a project with `"type": "module"`.
 
 ## Command
 
